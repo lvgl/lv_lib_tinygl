@@ -1,5 +1,4 @@
 #include "zgl.h"
-#include <SDL2/SDL.h>
 
 void gl_print_matrix( const float *m)
 {

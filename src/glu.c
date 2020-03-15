@@ -2,7 +2,6 @@
 #include <math.h>
 #include "gl.h"
 #include "glu.h"
-#include <SDL2/SDL.h>
 
 void drawTorus(float rc, int numc, float rt, int numt)
 {

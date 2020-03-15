@@ -28,9 +28,9 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "tinygl/gl.h"
-#include "tinygl/zbuffer.h"
-#include "tinygl/gears.h"
+#include "gl.h"
+#include "zbuffer.h"
+#include "gears.h"
 
 ZBuffer* frameBuffer;
 
