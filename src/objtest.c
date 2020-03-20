@@ -28,9 +28,9 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "gl.h"
-#include "zbuffer.h"
-#include "gears.h"
+#include "lv_lib_tinygl/src/gl.h"
+#include "lv_lib_tinygl/src/zbuffer.h"
+#include "lv_lib_tinygl/src/gears.h"
 
 ZBuffer* frameBuffer;
 
@@ -566,8 +566,8 @@ init (const char *filename)
     glLightfv (GL_LIGHT0, GL_POSITION, lightpos);
 
     /* Load OBJ model file */
-//    if (!ReadOBJModel (filename, &objfile))
-//        exit (EXIT_FAILURE);
+    if (!ReadOBJModel (filename, &objfile))
+        exit (EXIT_FAILURE);
 }
 
 void
