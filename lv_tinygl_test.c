@@ -42,6 +42,7 @@ static lv_color_t cbuf[LV_IMG_BUF_SIZE_TRUE_COLOR_ALPHA(CANVAS_WIDTH, CANVAS_HEI
 /**********************
  *   GLOBAL FUNCTIONS
  **********************/
+
 void lv_tinygl_test(void)
 {
     /*Create glGears*/
