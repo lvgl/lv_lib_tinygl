@@ -226,26 +226,26 @@ FirstPass (FILE *fp, struct obj_model_t *mdl)
             if (sscanf (buf + 2, "%d/%d/%d", &v, &n, &t) == 3)
             {
                 mdl->num_faces++;
-                mdl->has_texCoords = 1;
-                mdl->has_normals = 1;
+                mdl->has_texCoords |= 1;
+                mdl->has_normals |= 1;
             }
             else if (sscanf (buf + 2, "%d//%d", &v, &n) == 2)
             {
                 mdl->num_faces++;
-                mdl->has_texCoords = 0;
-                mdl->has_normals = 1;
+                mdl->has_texCoords |= 0;
+                mdl->has_normals |= 1;
             }
             else if (sscanf (buf + 2, "%d/%d", &v, &t) == 2)
             {
                 mdl->num_faces++;
-                mdl->has_texCoords = 1;
-                mdl->has_normals = 0;
+                mdl->has_texCoords |= 1;
+                mdl->has_normals |= 0;
             }
             else if (sscanf (buf + 2, "%d", &v) == 1)
             {
                 mdl->num_faces++;
-                mdl->has_texCoords = 0;
-                mdl->has_normals = 0;
+                mdl->has_texCoords |= 0;
+                mdl->has_normals |= 0;
             }
             else
             {
@@ -326,7 +326,7 @@ SecondPass (FILE *fp, struct obj_model_t *mdl)
                     if (sscanf (buf + 2, "%f %f %f", &pvert->xyzw[0],
                             &pvert->xyzw[1], &pvert->xyzw[2] ) != 3)
                     {
-                        fprintf(stderr,"Error reading vertex data!\n");
+                        fprintf(stderr,"Error reading vertex data (%s)!\n", buf + 2);
                         return 0;
                     }
                     else
